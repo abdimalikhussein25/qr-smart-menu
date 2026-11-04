@@ -1,0 +1,13 @@
+{
+  "name": "qr-smart-menu",
+  "version": "0.1.0",
+  "description": "Scan-to-order restaurant menu: customers scan the table QR code, pick dishes, and the order lands on the restaurant's WhatsApp. No app, no backend.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "start": "npx --yes serve public"
+  },
+  "author": "Abdimalik Salad Hussein",
+  "license": "MIT"
+}

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Table QR Codes</title>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+  <style>
+    body { font: 15px/1.4 system-ui, sans-serif; margin: 24px; color: #1d1b16; background: #fff; }
+    .controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; margin-bottom: 24px; }
+    label { display: grid; gap: 4px; font-weight: 600; font-size: 13px; }
+    input { padding: 8px 10px; border: 1px solid #ccc; border-radius: 8px; font: inherit; min-width: 0; }
+    button { padding: 9px 16px; border: 0; border-radius: 8px; background: #14382d; color: #fff; font-weight: 600; cursor: pointer; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 16px; }
+    .card { border: 2px dashed #ccc; border-radius: 14px; padding: 14px; text-align: center; break-inside: avoid; }
+    .card svg { width: 100%; height: auto; }
+    .card b { display: block; font-size: 20px; margin-top: 6px; }
+    .card small { color: #6d675c; }
+    @media print { .controls { display: none; } body { margin: 0; } }
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <label>Menu URL <input id="url" size="34" /></label>
+    <label>Tables <input id="from" type="number" value="1" min="1" style="width:70px" /></label>
+    <label>to <input id="to" type="number" value="12" min="1" style="width:70px" /></label>
+    <button id="go">Generate</button>
+    <button id="print" type="button">Print</button>
+  </div>
+  <div id="grid" class="grid"></div>
+  <script>
+    const $ = (id) => document.getElementById(id);
+    $("url").value = new URL("./", location.href).href;
+    function generate() {
+      const base = $("url").value.trim();
+      const from = Math.max(1, +$("from").value), to = Math.min(200, Math.max(from, +$("to").value));
+      $("grid").replaceChildren();
+      for (let t = from; t <= to; t++) {
+        const link = `${base}${base.includes("?") ? "&" : "?"}table=${t}`;
+        const qr = qrcode(0, "M");
+        qr.addData(link);
+        qr.make();
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = qr.createSvgTag({ cellSize: 4, margin: 2, scalable: true });
+        card.insertAdjacentHTML("beforeend", `<b>Miiska ${t}</b><small>Scan to order · Iska dalbo</small>`);
+        $("grid").append(card);
+      }
+    }
+    $("go").onclick = generate;
+    $("print").onclick = () => print();
+    generate();
+  </script>
+</body>
+</html>

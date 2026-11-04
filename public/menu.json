@@ -1,0 +1,45 @@
+{
+  "restaurant": {
+    "name": "Xamar Kitchen",
+    "tagline": "Cunto Soomaaliyeed oo dhab ah",
+    "currency": "USD",
+    "whatsapp": "252610000000"
+  },
+  "categories": [
+    {
+      "id": "breakfast",
+      "name": { "so": "Quraac", "en": "Breakfast" },
+      "items": [
+        { "id": "b1", "name": { "so": "Canjeero iyo Suqaar", "en": "Canjeero with Suqaar" }, "price": 3.0, "emoji": "🥞" },
+        { "id": "b2", "name": { "so": "Malawax iyo Malab", "en": "Malawax with Honey" }, "price": 2.5, "emoji": "🍯" },
+        { "id": "b3", "name": { "so": "Beer iyo Muufo", "en": "Liver with Muufo" }, "price": 3.5, "emoji": "🍳" }
+      ]
+    },
+    {
+      "id": "mains",
+      "name": { "so": "Cunto Weyn", "en": "Mains" },
+      "items": [
+        { "id": "m1", "name": { "so": "Bariis iyo Hilib Ari", "en": "Rice with Goat Meat" }, "price": 6.5, "emoji": "🍛", "popular": true },
+        { "id": "m2", "name": { "so": "Baasto Somali", "en": "Somali Pasta" }, "price": 4.0, "emoji": "🍝" },
+        { "id": "m3", "name": { "so": "Kalluun Dubban", "en": "Grilled Fish" }, "price": 7.0, "emoji": "🐟" }
+      ]
+    },
+    {
+      "id": "snacks",
+      "name": { "so": "Fudud", "en": "Snacks" },
+      "items": [
+        { "id": "s1", "name": { "so": "Sambuusi (4)", "en": "Sambusa (4)" }, "price": 2.0, "emoji": "🥟", "popular": true },
+        { "id": "s2", "name": { "so": "Bajiye", "en": "Bajiye" }, "price": 1.5, "emoji": "🧆" }
+      ]
+    },
+    {
+      "id": "drinks",
+      "name": { "so": "Cabitaan", "en": "Drinks" },
+      "items": [
+        { "id": "d1", "name": { "so": "Shaah Somali", "en": "Somali Tea" }, "price": 0.75, "emoji": "🍵" },
+        { "id": "d2", "name": { "so": "Cambe Cusub", "en": "Fresh Mango Juice" }, "price": 2.5, "emoji": "🥭" },
+        { "id": "d3", "name": { "so": "Biyo", "en": "Water" }, "price": 0.5, "emoji": "💧" }
+      ]
+    }
+  ]
+}
