@@ -1,6 +1,6 @@
 # qr-smart-menu
 
-**Scan the table, pick your food, order on WhatsApp.** A mobile menu for restaurants and cafés: each table gets a QR code, customers browse in Somali or English, and the finished order — with the table number — arrives on the restaurant's WhatsApp.
+**Scan the table, pick your food, order on WhatsApp.** A mobile menu for restaurants and cafés: each table gets a QR code, customers browse in Somali or English, and the finished order arrives on the restaurant's WhatsApp with the table number.
 
 No app to install, no backend, no monthly fees. Host it free on GitHub Pages, Vercel or any static host.
 
@@ -16,7 +16,7 @@ No app to install, no backend, no monthly fees. Host it free on GitHub Pages, Ve
 
 ## How it works
 
-1. Print a QR code per table with [`qr.html`](public/qr.html) — each one opens the menu with `?table=N`.
+1. Print a QR code per table with [`qr.html`](public/qr.html); each one opens the menu with `?table=N`.
 2. The customer scans, adds dishes, and taps **Ku dir WhatsApp**.
 3. WhatsApp opens with the order pre-written:
 
@@ -38,7 +38,7 @@ No app to install, no backend, no monthly fees. Host it free on GitHub Pages, Ve
 - Optional note for the kitchen ("basbaas la'aan")
 - Light and dark mode, safe-area aware for modern phones
 - Printable QR sheet generator for any number of tables
-- Money maths in integer cents — no `0.1 + 0.2` surprises
+- Money maths in integer cents, so no `0.1 + 0.2` surprises
 - Table parameter validated so a crafted QR can't inject content
 
 ## Make it yours
@@ -58,7 +58,7 @@ npm test          # cart and order-message tests
 
 ## Deploy
 
-Point any static host at the `public/` folder — e.g. GitHub Pages (Settings → Pages → deploy from `/public` via an action), Vercel or Netlify.
+Point any static host at the `public/` folder, e.g. GitHub Pages (Settings → Pages → deploy from `/public` via an action), Vercel or Netlify.
 
 ## Roadmap
 
@@ -68,4 +68,4 @@ Point any static host at the `public/` folder — e.g. GitHub Pages (Settings �
 
 ## License
 
-MIT © Abdimalik Salad Hussein — [Fiddo Technology](https://fiddotechnology.com)
+MIT © Abdimalik Salad Hussein · [Fiddo Technology](https://fiddotechnology.com)
